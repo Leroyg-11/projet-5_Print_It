@@ -342,7 +342,7 @@ img.active{
 .container_puces{
 	position: absolute;
     display: flex;
-    top: 65vh;
+    top: 105%;
 	align-items: baseline;
 }
 .puce{
