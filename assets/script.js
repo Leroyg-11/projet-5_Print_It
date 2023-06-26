@@ -17,21 +17,30 @@ const slides = [
 	}
 ]
 
-const items = document.querySelectorAll('.slider-img');
+const items = document.querySelectorAll('.slider_img');
+const puces = document.querySelectorAll('.puce');
+
 const nbSlide = items.length;
+const nbPuces = puces.length;
+
 const suivant = document.querySelector('.right');
 const precedent = document.querySelector('.left');
+const pucesActive = document.querySelector('.selected')
+
+
 let count = 0; 
+
+
+
 let afficheText = document.querySelector(".affiche_text");
 afficheText.innerHTML = `${slides[count].tagLine}`;
 
-const puces = document.querySelectorAll('.puce');
-const pucesActive = document.querySelector('.activee')
-const nbPuces = puces.length;
+suivant.addEventListener('click', slideSuivante);
+
 
 function slideSuivante(){
 	items[count].classList.remove('active');
-	puces[count].classList.remove('activee');
+	puces[count].classList.remove('selected');
 
 	if(count < nbSlide - 1){
 		count++;
@@ -40,7 +49,7 @@ function slideSuivante(){
 	}
 
 	items[count].classList.add('active');
-	puces[count].classList.add('activee');
+	puces[count].classList.add('selected');
 
 	afficheText.innerHTML = slides[count].tagLine;
 	
@@ -50,11 +59,11 @@ function slideSuivante(){
 	
 }
 
-suivant.addEventListener('click', slideSuivante);
+precedent.addEventListener('click', slidePrecedente);
 
 function slidePrecedente(){
 	items[count].classList.remove('active');
-	puces[count].classList.remove('activee');
+	puces[count].classList.remove('selected');
 
 
 	if(count > 0){
@@ -64,7 +73,7 @@ function slidePrecedente(){
 	}
 
 	items[count].classList.add('active');
-	puces[count].classList.add('activee');
+	puces[count].classList.add('selected');
 
 	afficheText.innerHTML = slides[count].tagLine;
 
@@ -73,7 +82,6 @@ function slidePrecedente(){
 
 }
 
-precedent.addEventListener('click', slidePrecedente);
 
 
 
