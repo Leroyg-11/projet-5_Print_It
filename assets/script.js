@@ -53,9 +53,6 @@ function slideSuivante(){
 
 	afficheText.innerHTML = slides[count].tagLine;
 	
-
-	console.log(count);
-	console.log(slides[count].tagLine);
 	
 }
 
@@ -76,9 +73,6 @@ function slidePrecedente(){
 	puces[count].classList.add('selected');
 
 	afficheText.innerHTML = slides[count].tagLine;
-
-	console.log(count);
-	console.log(slides[count].tagLine);
 
 }
 
